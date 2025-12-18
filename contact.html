@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | SilkSpeed Race Wear - Premium Equestrian Apparel</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="logo">
+                    <img src="images/logo.png" alt="SilkSpeed Race Wear" height="40">
+                </a>
+                
+                <div class="nav-menu">
+                    <ul class="nav-list">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="wholesale.html">Wholesale</a></li>
+                        <li><a href="contact.html" class="active">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="nav-icons">
+                    <a href="#" class="icon-link search-toggle"><i class="fas fa-search"></i></a>
+                    <a href="#" class="icon-link"><i class="far fa-user"></i></a>
+                    <a href="checkout.html" class="icon-link cart-icon">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span class="cart-count">0</span>
+                    </a>
+                    <button class="menu-toggle" id="menuToggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Contact Hero -->
+    <section class="contact-hero">
+        <div class="container">
+            <div class="contact-hero-content">
+                <h1>We're Here to Help</h1>
+                <p>Whether you're a rider, retailer, or partner — reach out to us for inquiries, orders, support, or collaboration.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Options -->
+    <section class="contact-options">
+        <div class="container">
+            <div class="options-grid">
+                <!-- Email Support -->
+                <div class="option-card">
+                    <div class="option-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>Email Support</h3>
+                    <p>For product inquiries, orders, wholesale, or general questions.</p>
+                    <div class="option-details">
+                        <p><strong>Email:</strong> support@silkspeed.com</p>
+                        <p><strong>Response Time:</strong> Within 24 hours</p>
+                    </div>
+                    <a href="mailto:support@silkspeed.com" class="btn btn-outline">
+                        <i class="fas fa-paper-plane"></i> Send Email
+                    </a>
+                </div>
+                
+                <!-- Phone/WhatsApp Support -->
+                <div class="option-card">
+                    <div class="option-icon">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <h3>WhatsApp / Phone</h3>
+                    <p>Direct support for quick questions or urgent assistance.</p>
+                    <div class="option-details">
+                        <p><strong>Phone:</strong> +1 (555) 123-4567</p>
+                        <p><strong>WhatsApp:</strong> +1 (555) 123-4567</p>
+                        <p><strong>Hours:</strong> Mon-Fri, 9AM-6PM EST</p>
+                    </div>
+                    <a href="https://wa.me/15551234567" class="btn btn-outline" target="_blank">
+                        <i class="fab fa-whatsapp"></i> WhatsApp Us
+                    </a>
+                </div>
+                
+                <!-- Business Inquiries -->
+                <div class="option-card">
+                    <div class="option-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Retail & B2B Enquiries</h3>
+                    <p>For wholesale, OEM, private labeling, or partnerships.</p>
+                    <div class="option-details">
+                        <p><strong>Email:</strong> b2b@silkspeed.com</p>
+                        <p><strong>Contact:</strong> Sarah Chen, B2B Manager</p>
+                    </div>
+                    <a href="mailto:b2b@silkspeed.com" class="btn btn-outline">
+                        <i class="fas fa-briefcase"></i> Business Inquiry
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section class="contact-form-section">
+        <div class="container">
+            <div class="form-container">
+                <h2>Send Us a Message</h2>
+                <p>Fill out the form below and we'll get back to you as soon as possible.</p>
+                
+                <form id="contactForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="fullName">Full Name *</label>
+                            <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required>
+                            <div class="error-message" id="nameError"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                            <div class="error-message" id="emailError"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Message Type *</label>
+                            <select id="subject" name="subject" required>
+                                <option value="">Select a topic</option>
+                                <option value="general">General Inquiry</option>
+                                <option value="product">Product Question</option>
+                                <option value="order">Order Status</option>
+                                <option value="wholesale">Wholesale / B2B</option>
+                                <option value="returns">Returns & Exchange</option>
+                                <option value="technical">Technical Support</option>
+                                <option value="feedback">Feedback & Suggestions</option>
+                                <option value="other">Other</option>
+                            </select>
+                            <div class="error-message" id="subjectError"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="orderNumber">Order Number (if applicable)</label>
+                        <input type="text" id="orderNumber" name="orderNumber" placeholder="Enter your order number">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Your Message *</label>
+                        <textarea id="message" name="message" rows="6" placeholder="Write your message here..." required></textarea>
+                        <div class="error-message" id="messageError"></div>
+                        <div class="char-counter">
+                            <span id="charCount">0</span>/500 characters
+                        </div>
+                    </div>
+                    
+                    <div class="form-check">
+                        <input type="checkbox" id="newsletter" name="newsletter" checked>
+                        <label for="newsletter">Subscribe to our newsletter for updates and offers</label>
+                    </div>
+                    
+                    <div class="form-check">
+                        <input type="checkbox" id="privacy" name="privacy" required>
+                        <label for="privacy">I agree to the <a href="privacy.html">Privacy Policy</a> *</label>
+                        <div class="error-message" id="privacyError"></div>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary btn-submit">
+                        <i class="fas fa-paper-plane"></i> Send Message
+                    </button>
+                    
+                    <div id="formMessage" class="form-message"></div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Office Location -->
+    <section class="office-location">
+        <div class="container">
+            <div class="location-grid">
+                <div class="location-info">
+                    <h2>Our Office & Workshop</h2>
+                    <div class="address-card">
+                        <div class="address-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="address-details">
+                            <h3>SilkSpeed Race Wear Headquarters</h3>
+                            <p>123 Equestrian Street<br>
+                            Riding District<br>
+                            Cityville, CV 12345<br>
+                            United States</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h4>Phone</h4>
+                                <p>+1 (555) 123-4567</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>Email</h4>
+                                <p>hello@silkspeed.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <h4>Business Hours</h4>
+                                <p>Monday - Friday: 9:00 AM - 6:00 PM EST<br>
+                                Saturday: 10:00 AM - 4:00 PM EST<br>
+                                Sunday: Closed</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="location-features">
+                        <h4>At Our Location:</h4>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Showroom available by appointment</li>
+                            <li><i class="fas fa-check"></i> Professional fitting consultations</li>
+                            <li><i class="fas fa-check"></i> Product demonstrations</li>
+                            <li><i class="fas fa-check"></i> Free parking available</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="location-map">
+                    <div class="map-container">
+                        <!-- Embedded Google Maps -->
+                        <div class="map-placeholder">
+                            <div class="map-image">
+                                <img src="https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?w=800&h=500&fit=crop" alt="Map Location">
+                            </div>
+                            <div class="map-overlay">
+                                <button class="btn btn-light" id="openMapBtn">
+                                    <i class="fas fa-map"></i> Open in Google Maps
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="transportation">
+                        <h4>Getting Here:</h4>
+                        <div class="transport-options">
+                            <div class="transport-option">
+                                <i class="fas fa-subway"></i>
+                                <span>Subway: Riding District Station (Line 5)</span>
+                            </div>
+                            <div class="transport-option">
+                                <i class="fas fa-bus"></i>
+                                <span>Bus: Routes 42, 67, 89</span>
+                            </div>
+                            <div class="transport-option">
+                                <i class="fas fa-car"></i>
+                                <span>Parking: Free on-site parking</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Connect -->
+    <section class="social-connect">
+        <div class="container">
+            <div class="social-content">
+                <h2>Connect With Us</h2>
+                <p>Follow us for updates, product launches, rider stories, and behind-the-scenes content.</p>
+                
+                <div class="social-icons">
+                    <a href="#" class="social-icon instagram">
+                        <i class="fab fa-instagram"></i>
+                        <span>Instagram</span>
+                    </a>
+                    <a href="#" class="social-icon facebook">
+                        <i class="fab fa-facebook"></i>
+                        <span>Facebook</span>
+                    </a>
+                    <a href="#" class="social-icon youtube">
+                        <i class="fab fa-youtube"></i>
+                        <span>YouTube</span>
+                    </a>
+                    <a href="#" class="social-icon pinterest">
+                        <i class="fab fa-pinterest"></i>
+                        <span>Pinterest</span>
+                    </a>
+                    <a href="#" class="social-icon twitter">
+                        <i class="fab fa-twitter"></i>
+                        <span>Twitter</span>
+                    </a>
+                    <a href="#" class="social-icon linkedin">
+                        <i class="fab fa-linkedin"></i>
+                        <span>LinkedIn</span>
+                    </a>
+                </div>
+                
+                <div class="social-handles">
+                    <p><strong>Tag us:</strong> @silkspeed_racewear</p>
+                    <p><strong>Hashtag:</strong> #RideWithSilkSpeed</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Customer Care Guarantee -->
+    <section class="care-guarantee">
+        <div class="container">
+            <div class="guarantee-content">
+                <div class="guarantee-icon">
+                    <i class="fas fa-heart"></i>
+                </div>
+                <div class="guarantee-text">
+                    <h3>Your Satisfaction is Our Priority</h3>
+                    <p>We value every rider and partner. Our dedicated support team is committed to providing timely, helpful, and personalized assistance for all your needs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Preview -->
+    <section class="faq-preview">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>How long does shipping take?</h3>
+                    <p>Standard shipping takes 7-15 business days, express shipping 3-7 days. International delivery times vary by destination.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>What is your return policy?</h3>
+                    <p>We offer 30-day returns on unworn items with original tags. Return shipping is the customer's responsibility.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Do you offer international shipping?</h3>
+                    <p>Yes, we ship to over 50 countries worldwide with reliable logistics partners.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>How do I track my order?</h3>
+                    <p>You'll receive a tracking number via email once your order ships, which works on 17track.com.</p>
+                </div>
+            </div>
+            
+            <div class="faq-link">
+                <a href="faq.html" class="btn btn-outline">
+                    <i class="fas fa-question-circle"></i> View All FAQs
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="contact-cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Looking for Wholesale or Custom Manufacturing?</h2>
+                <p>Explore our B2B partnership opportunities for retailers, riding academies, and brands.</p>
+                <a href="wholesale.html" class="btn btn-light">
+                    <i class="fas fa-handshake"></i> Visit B2B / Wholesale →
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>SilkSpeed Race Wear</h3>
+                    <p>Premium equestrian apparel for riders worldwide.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Customer Care</h4>
+                    <ul>
+                        <li><a href="shipping.html">Shipping & Delivery</a></li>
+                        <li><a href="returns.html">Returns & Exchange</a></li>
+                        <li><a href="order-tracking.html">Order Tracking</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="wholesale.html">Wholesale</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="terms.html">Terms & Conditions</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="shipping.html">Shipping Policy</a></li>
+                        <li><a href="returns.html">Refund Policy</a></li>
+                        <li><a href="cookies.html">Cookie Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 SilkSpeed Race Wear. All rights reserved.</p>
+                <div class="payment-methods">
+                    <i class="fab fa-cc-visa"></i>
+                    <i class="fab fa-cc-mastercard"></i>
+                    <i class="fab fa-cc-amex"></i>
+                    <i class="fab fa-cc-paypal"></i>
+                    <i class="fab fa-cc-apple-pay"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script src="js/cart.js"></script>
+    
+    <!-- Contact Page Specific JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Character counter for message textarea
+            const messageTextarea = document.getElementById('message');
+            const charCount = document.getElementById('charCount');
+            
+            if (messageTextarea && charCount) {
+                messageTextarea.addEventListener('input', function() {
+                    const length = this.value.length;
+                    charCount.textContent = length;
+                    
+                    if (length > 500) {
+                        charCount.style.color = '#f44336';
+                    } else if (length > 400) {
+                        charCount.style.color = '#ff9800';
+                    } else {
+                        charCount.style.color = 'inherit';
+                    }
+                });
+            }
+            
+            // Form validation
+            const contactForm = document.getElementById('contactForm');
+            const formMessage = document.getElementById('formMessage');
+            
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Reset previous errors
+                    clearErrors();
+                    formMessage.innerHTML = '';
+                    
+                    // Validate form
+                    let isValid = true;
+                    
+                    // Name validation
+                    const name = document.getElementById('fullName').value.trim();
+                    if (!name) {
+                        showError('nameError', 'Please enter your full name');
+                        isValid = false;
+                    } else if (name.length < 2) {
+                        showError('nameError', 'Name must be at least 2 characters');
+                        isValid = false;
+                    }
+                    
+                    // Email validation
+                    const email = document.getElementById('email').value.trim();
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!email) {
+                        showError('emailError', 'Please enter your email address');
+                        isValid = false;
+                    } else if (!emailRegex.test(email)) {
+                        showError('emailError', 'Please enter a valid email address');
+                        isValid = false;
+                    }
+                    
+                    // Subject validation
+                    const subject = document.getElementById('subject').value;
+                    if (!subject) {
+                        showError('subjectError', 'Please select a message type');
+                        isValid = false;
+                    }
+                    
+                    // Message validation
+                    const message = document.getElementById('message').value.trim();
+                    if (!message) {
+                        showError('messageError', 'Please enter your message');
+                        isValid = false;
+                    } else if (message.length < 10) {
+                        showError('messageError', 'Message must be at least 10 characters');
+                        isValid = false;
+                    } else if (message.length > 500) {
+                        showError('messageError', 'Message cannot exceed 500 characters');
+                        isValid = false;
+                    }
+                    
+                    // Privacy policy validation
+                    const privacy = document.getElementById('privacy').checked;
+                    if (!privacy) {
+                        showError('privacyError', 'You must agree to the Privacy Policy');
+                        isValid = false;
+                    }
+                    
+                    if (isValid) {
+                        // Show loading state
+                        const submitBtn = document.querySelector('.btn-submit');
+                        const originalText = submitBtn.innerHTML;
+                        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+                        submitBtn.disabled = true;
+                        
+                        // Simulate form submission (in real site, this would be AJAX)
+                        setTimeout(() => {
+                            // Show success message
+                            formMessage.innerHTML = `
+                                <div class="success-message">
+                                    <i class="fas fa-check-circle"></i>
+                                    <div>
+                                        <h4>Thank you for your message!</h4>
+                                        <p>We've received your inquiry and will get back to you within 24 hours.</p>
+                                        <p>A confirmation email has been sent to ${email}.</p>
+                                    </div>
+                                </div>
+                            `;
+                            
+                            // Reset form
+                            contactForm.reset();
+                            charCount.textContent = '0';
+                            
+                            // Reset button
+                            submitBtn.innerHTML = originalText;
+                            submitBtn.disabled = false;
+                            
+                            // Scroll to message
+                            formMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        }, 2000);
+                    }
+                });
+            }
+            
+            function showError(elementId, message) {
+                const errorElement = document.getElementById(elementId);
+                if (errorElement) {
+                    errorElement.textContent = message;
+                    errorElement.style.display = 'block';
+                    
+                    // Highlight the input field
+                    const inputElement = errorElement.previousElementSibling;
+                    if (inputElement && (inputElement.tagName === 'INPUT' || inputElement.tagName === 'SELECT' || inputElement.tagName === 'TEXTAREA')) {
+                        inputElement.classList.add('error');
+                    }
+                }
+            }
+            
+            function clearErrors() {
+                // Clear all error messages
+                document.querySelectorAll('.error-message').forEach(element => {
+                    element.textContent = '';
+                    element.style.display = 'none';
+                });
+                
+                // Remove error classes from inputs
+                document.querySelectorAll('.form-group input, .form-group select, .form-group textarea').forEach(element => {
+                    element.classList.remove('error');
+                });
+            }
+            
+            // Real-time validation
+            const inputs = document.querySelectorAll('#contactForm input, #contactForm select, #contactForm textarea');
+            inputs.forEach(input => {
+                input.addEventListener('blur', function() {
+                    validateField(this);
+                });
+                
+                input.addEventListener('input', function() {
+                    // Clear error when user starts typing
+                    const errorId = this.id + 'Error';
+                    const errorElement = document.getElementById(errorId);
+                    if (errorElement) {
+                        errorElement.textContent = '';
+                        errorElement.style.display = 'none';
+                        this.classList.remove('error');
+                    }
+                });
+            });
+            
+            function validateField(field) {
+                const value = field.value.trim();
+                const fieldId = field.id;
+                
+                switch(fieldId) {
+                    case 'fullName':
+                        if (!value) {
+                            showError('nameError', 'Please enter your full name');
+                        } else if (value.length < 2) {
+                            showError('nameError', 'Name must be at least 2 characters');
+                        }
+                        break;
+                        
+                    case 'email':
+                        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                        if (!value) {
+                            showError('emailError', 'Please enter your email address');
+                        } else if (!emailRegex.test(value)) {
+                            showError('emailError', 'Please enter a valid email address');
+                        }
+                        break;
+                        
+                    case 'subject':
+                        if (!value) {
+                            showError('subjectError', 'Please select a message type');
+                        }
+                        break;
+                        
+                    case 'message':
+                        if (!value) {
+                            showError('messageError', 'Please enter your message');
+                        } else if (value.length < 10) {
+                            showError('messageError', 'Message must be at least 10 characters');
+                        } else if (value.length > 500) {
+                            showError('messageError', 'Message cannot exceed 500 characters');
+                        }
+                        break;
+                }
+            }
+            
+            // Phone number formatting
+            const phoneInput = document.getElementById('phone');
+            if (phoneInput) {
+                phoneInput.addEventListener('input', function(e) {
+                    let value = e.target.value.replace(/\D/g, '');
+                    
+                    if (value.length > 3 && value.length <= 6) {
+                        value = value.replace(/(\d{3})(\d+)/, '($1) $2');
+                    } else if (value.length > 6) {
+                        value = value.replace(/(\d{3})(\d{3})(\d+)/, '($1) $2-$3');
+                    }
+                    
+                    e.target.value = value.substring(0, 14);
+                });
+            }
+            
+            // Open map button
+            const openMapBtn = document.getElementById('openMapBtn');
+            if (openMapBtn) {
+                openMapBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    // In real implementation, this would open Google Maps
+                    window.open('https://www.google.com/maps', '_blank');
+                });
+            }
+            
+            // Social icons hover effect
+            const socialIcons = document.querySelectorAll('.social-icon');
+            socialIcons.forEach(icon => {
+                icon.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-5px)';
+                });
+                
+                icon.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                });
+            });
+            
+            // Initialize form
+            clearErrors();
+        });
+    </script>
+</body>
+</html>

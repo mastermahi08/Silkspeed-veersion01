@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shipping Policy | SilkSpeed Race Wear</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <style>
+        /* Reuse legal pages styles */
+        .legal-hero {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+        
+        .legal-hero h1 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+        
+        .legal-hero p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.1rem;
+        }
+        
+        .legal-content {
+            padding: 4rem 0;
+            background-color: var(--bg-white);
+        }
+        
+        .legal-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .last-updated {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .legal-section {
+            margin-bottom: 3rem;
+        }
+        
+        .legal-section h2 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        
+        .legal-section h3 {
+            color: var(--text-dark);
+            margin: 1.5rem 0 0.8rem;
+            font-size: 1.2rem;
+        }
+        
+        .legal-section p {
+            color: var(--text-light);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+        
+        .legal-section ul {
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+        }
+        
+        .legal-section li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+        
+        .legal-note {
+            background-color: var(--bg-light);
+            padding: 1.5rem;
+            border-radius: var(--radius);
+            margin: 2rem 0;
+            border-left: 4px solid var(--primary-color);
+        }
+        
+        .legal-note p {
+            margin-bottom: 0;
+            color: var(--text-dark);
+        }
+        
+        .legal-contact {
+            background-color: var(--bg-light);
+            padding: 2rem;
+            border-radius: var(--radius);
+            margin-top: 3rem;
+            text-align: center;
+        }
+        
+        .legal-contact h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .legal-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+        }
+        
+        .legal-links a {
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+        
+        .legal-links a:hover {
+            text-decoration: underline;
+        }
+        
+        .shipping-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            background-color: var(--bg-white);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+        
+        .shipping-table th,
+        .shipping-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .shipping-table th {
+            background-color: var(--bg-light);
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+        
+        .shipping-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .shipping-zone {
+            background-color: var(--bg-light);
+            padding: 1.5rem;
+            border-radius: var(--radius);
+            margin: 1.5rem 0;
+        }
+        
+        .zone-title {
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .zone-countries {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+        
+        .country-tag {
+            background-color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: var(--text-light);
+            border: 1px solid var(--border-color);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="logo">
+                    <img src="images/logo.png" alt="SilkSpeed Race Wear" height="40">
+                </a>
+                
+                <div class="nav-menu">
+                    <ul class="nav-list">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="wholesale.html">Wholesale</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="nav-icons">
+                    <a href="#" class="icon-link search-toggle"><i class="fas fa-search"></i></a>
+                    <a href="#" class="icon-link"><i class="far fa-user"></i></a>
+                    <a href="checkout.html" class="icon-link cart-icon">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span class="cart-count">0</span>
+                    </a>
+                    <button class="menu-toggle" id="menuToggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Shipping Hero -->
+    <section class="legal-hero">
+        <div class="container">
+            <h1>Shipping Policy</h1>
+            <p>Information about our shipping process, delivery timelines, and international shipping guidelines.</p>
+        </div>
+    </section>
+
+    <!-- Shipping Content -->
+    <section class="legal-content">
+        <div class="container">
+            <div class="legal-container">
+                <div class="last-updated">
+                    <strong>Last Updated:</strong> January 15, 2024
+                </div>
+                
+                <div class="legal-section">
+                    <h2>1. Order Processing</h2>
+                    <p>We strive to process and ship your orders as quickly as possible:</p>
+                    <ul>
+                        <li><strong>Processing Time:</strong> Orders are processed within <strong>24-48 hours</strong> during business days (Monday-Friday)</li>
+                        <li><strong>Weekend Orders:</strong> Orders placed on weekends or holidays will be processed the next business day</li>
+                        <li><strong>Cut-off Time:</strong> Orders placed before 2:00 PM EST will be processed the same day</li>
+                        <li><strong>Stock Verification:</strong> All items are verified for availability before shipping</li>
+                    </ul>
+                    
+                    <div class="legal-note">
+                        <p><strong>Note:</strong> During peak seasons (holidays, sales events), processing may take 2-3 business days. We appreciate your patience.</p>
+                    </div>
+                </div>
+                
+                <div class="legal-section">
+                    <h2>2. Delivery Time Estimates</h2>
+                    <p>Delivery times vary depending on your location and selected shipping method:</p>
+                    
+                    <table class="shipping-table">
+                        <thead>
+                            <tr>
+                                <th>Shipping Method</th>
+                                <th>Delivery Time</th>
+                                <th>Best For</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Standard Worldwide Shipping</strong></td>
+                                <td>7-15 business days</td>
+                                <td>Regular orders, budget-friendly</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Express Global Shipping</strong></td>
+                                <td>3-7 business days</td>
+                                <td>Faster delivery, trackable</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Priority Overnight</strong></td>
+                                <td>1-2 business days</td>
+                                <td>Urgent orders, last-minute needs</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Free Standard Shipping</strong></td>
+                                <td>7-15 business days</td>
+                                <td>Orders over $150 (USA only)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <p><strong>Please Note:</strong> Delivery timelines are estimates and may vary due to:</p>
+                    <ul>
+                        <li>Customs clearance procedures</li>
+                        <li>Local courier delays</li>
+                        <li>High-volume seasons (holidays)</li>
+                        <li>Weather conditions and natural events</li>
+                        <li>Remote or rural locations</li>
+                    </ul>
+                </div>
+                
+                <div class="legal-section">
+                    <h2>3. Shipping Costs</h2>
+                    <p>Shipping fees are calculated at checkout based on:</p>
+                    <ul>
+                        <li><strong>Destination Country:</strong> International shipping rates vary by region</li>
+                        <li><strong>Shipping Method:</strong> Standard, Express, or Priority</li>
+                        <li><strong>Order Weight & Dimensions:</strong> Based on package size</li>
+                        <li><strong>Order Value:</strong> Free shipping thresholds may apply</li>
+                    </ul>
+                    
+                    <h3>Free Shipping</h3>
+                    <p>We offer free standard shipping on orders over <strong>$150</strong> to the following regions:</p>
+                    <ul>
+                        <li>United States (all 50 states)</li>
+                        <li>Canada (provinces with standard service)</li>
+                        <li>United Kingdom (mainland only)</li>
+                    </ul>
+                    <p>Free shipping applies to standard shipping only. Express and Priority shipping are available at additional cost.</p>
+                </div>
+                
+                <div class="legal-section">
+                    <h2>4. Tracking Information</h2>
+                    <p>Once your order ships, you will receive:</p>
+                    <ul>
+                        <li><strong>Shipping Confirmation Email:</strong> Sent within 24 hours of dispatch</li>
+                        <li><strong>Tracking Number:</strong> Provided in your shipping confirmation</li>
+                        <li><strong>Carrier Information:</strong> Details about the shipping carrier</li>
+                        <li><strong>Estimated Delivery Date:</strong> Based on carrier estimates</li>
+                    </ul>
+                    
+                    <h3>How to Track Your Order</h3>
+                    <p>You can track your shipment using:</p>
+                    <ul>
+                        <li><strong>Email Link:</strong> Click the tracking link in your shipping confirmation</li>
+                        <li><strong>Our Website:</strong> Visit our <a href="order-tracking.html">Order Tracking page</a></li>
+                        <li><strong>Carrier Website:</strong> Use the tracking number on the carrier's website</li>
+                        <li><strong>17Track.com:</strong> Universal tracking for multiple carriers</li>
+                    </ul>
+                    
+                    <div class="legal-note">
+                        <p><strong>Note:</strong> Tracking information may take 24-48 hours to update after the carrier receives your package. International tracking updates may have additional delays.</p>
+                    </div>
+                </div>
+                
+                <div class="legal-section">
+                    <h2>5. International Shipping Zones</h2>
+                    <p>We ship to most regions worldwide. Below are our primary shipping zones:</p>
+                    
+                    <div class="shipping-zone">
+                        <div class="zone-title">
+                            <i class="fas fa-flag-usa"></i>
+                            <span>Zone 1: North America</span>
+                        </div>
+                        <p><strong>Shipping Time:</strong> 3-7 business days</p>
+                        <div class="zone-countries">
+                            <span class="country-tag">United States</span>
+                            <span class="country-tag">Canada</span>
+                            <span class="country-tag">Mexico</span>
+                        </div>
+                    </div>
+                    
+                    <div class="shipping-zone">
+                        <div class="zone-title">
+                            <i class="fas fa-flag-europe"></i>
+                            <span>Zone 2: Europe</span>
+                        </div>
+                        <p><strong>Shipping Time:</strong> 5-10 business days</p>
+                        <div class="zone-countries">
+                            <span class="country-tag">United Kingdom</span>
+                            <span class="country-tag">Germany</span>
+                            <span class="country-tag">France</span>
+                            <span class="country-tag">Italy</span>
+                            <span class="country-tag">Spain</span>
+                            <span class="country-tag">+20 more</span>
+                        </div>
+                    </div>
+                    
+                    <div class="shipping-zone">
+                        <div class="zone-title">
+                            <i class="fas fa-flag-asia"></i>
+                            <span>Zone 3: Asia Pacific</span>
+                        </div>
+                        <p><strong>Shipping Time:</strong> 7-14 business days</p>
+                        <div class="zone-countries">
+                            <span class="country-tag">Australia</span>
+                            <span class="country-tag">Japan</span>
+                            <span class="country-tag">South Korea</span>
+                            <span class="country-tag">Singapore</span>
+                            <span class="country-tag">Hong Kong</span>
+                            <span class="country-tag">+15 more</span>
+                        </div>
+                    </div>
+                    
+                    <div class="shipping-zone">
+                        <div class="zone-title">
+                            <i class="fas fa-flag-middle-east"></i>
+                            <span>Zone 4: Middle East</span>
+                        </div>
+                        <p><strong>Shipping Time:</strong> 10-18 business days</p>
+                        <div class="zone-countries">
+                            <span class="country-tag">UAE</span>
+                            <span class="country-tag">Saudi Arabia</span>
+                            <span class="country-tag">Qatar</span>
+                            <span class="country-tag">Kuwait</span>
+                            <span class="country-tag">Bahrain</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="legal-section">
+                    <h2>6. Customs, Duties & Taxes</h2>
+                    <p><strong>Important Information for International Customers:</strong></p>
+                    
+                    <h3>Customs Duties & Import Taxes</h3>
+                    <p>International orders may incur:</p>
+                    <ul>
+                        <li><strong>Import Taxes:</strong> VAT, GST, or other sales taxes</li>
+                        <li><strong>Customs Duties:</strong> Fees charged by your country</li>
+                        <li><strong>Handling Fees:</strong> Administrative charges by customs</li>
+                        <li><strong>Brokerage Fees:</strong> For customs clearance services</li>
+                    </ul>
+                    
+                    <p><strong>These costs are NOT included</strong> in our product prices or shipping fees. They are determined by your country's regulations and must be paid by the recipient.</p>
+                    
+                    <h3>How to Estimate Customs Fees</h3>
+                    <p>You can estimate potential fees by:</p>
+                    <ul>
+                        <li>Contacting your local customs office</li>
+                        <li>Using online duty calculators</li>
+                        <li>Checking your country's import regulations</li>
+                    </ul>
+                    
+                    <div class="legal-note">
+                        <p><strong>Important:</strong> We cannot predict or control customs fees. Delays caused by customs clearance are outside our control. Please ensure you understand your country's import regulations before ordering.</p>
+                    </div>
+                </div>
+                
+                <div class="legal-section">
+                    <h2>7. Incorrect Shipping Information</h2>
+                    <p>Please double-check your shipping address before completing your order. SilkSpeed is not responsible for:</p>
+                    <ul>
+                        <li>Failed delivery due to incorrect addresses</li>
+                        <li>Lost packages due to wrong information provided</li>
+                        <li>Additional shipping costs for address corrections</li>
+                        <li>Delays caused by address verification</li>
+                    </ul>
+                    
+                    <h3>Address Correction</h3>
+                    <p>If you need to correct your shipping address:</p>
+                    <ol>
+                        <li><strong>Contact us immediately</strong> at support@silkspeed.com</li>
+                        <li>Provide your order number and correct address</li>
+                        <li>We'll attempt to update the address before shipping</li>
+                        <li>If already shipped, contact the carrier directly</li>
+                    </ol>
+                    
+                    <p>Address corrections after shipping may incur additional fees from the carrier.</p>
+                </div>
+                
+                <div class="legal-section">
+                    <h2>8. Lost or Delayed Shipments</h2>
+                    <p>If your package appears to be lost or significantly delayed:</p>
+                    
+                    <h3>Check First:</h3>
+                    <ul>
+                        <li>Verify the tracking information is up-to-date</li>
+                        <li>Check with neighbors or building management</li>
+                        <li>Look for delivery attempt notices</li>
+                        <li>Allow extra time for international shipments</li>
+                    </ul>
+                    
+                    <h3>If No Updates for 5-7 Days:</h3>
+                    <ol>
+                        <li>Contact us at support@silkspeed.com</li>
+                        <li>Provide your order number and tracking information</li>
+                        <li>We will coordinate with the carrier for investigation</li>
+                        <li>Most carriers require 10-15 days to declare a package lost</li>
+                    </ol>
+                    
+                    <p><strong>Investigation Timeline:</strong> Carrier investigations typically take 7-14 business days. We will keep you updated throughout the process.</p>
+                </div>
+                
+                <div class="legal-section">
+                    <h2>9. Countries We Ship To</h2>
+                    <p>We ship to most regions worldwide. If your country is not available at checkout:</p>
+                    <ul>
+                        <li><strong>Contact us</strong> for shipping availability</li>
+                        <li>We may be able to arrange special shipping</li>
+                        <li>Some restrictions may apply due to customs regulations</li>
+                    </ul>
+                    
+                    <h3>Currently Shipping To:</h3>
+                    <p>Over 50 countries including:</p>
+                    <div class="zone-countries">
+                        <span class="country-tag">USA</span>
+                        <span class="country-tag">Canada</span>
+                        <span class="country-tag">UK</span>
+                        <span class="country-tag">Germany</span>
+                        <span class="country-tag">France</span>
+                        <span class="country-tag">Australia</span>
+                        <span class="country-tag">Japan</span>
+                        <span class="country-tag">UAE</span>
+                        <span class="country-tag">Singapore</span>
+                        <span class="country-tag">South Korea</span>
+                        <span class="country-tag">Italy</span>
+                        <span class="country-tag">Spain</span>
+                        <span class="country-tag">Netherlands</span>
+                        <span class="country-tag">Switzerland</span>
+                        <span class="country-tag">+35 more</span>
+                    </div>
+                </div>
+                
+                <div class="legal-section">
+                    <h2>10. Shipping Restrictions</h2>
+                    <p>Some restrictions apply to international shipping:</p>
+                    <ul>
+                        <li><strong>Restricted Items:</strong> Some products may have shipping restrictions</li>
+                        <li><strong>Remote Areas:</strong> Additional fees or longer delivery times may apply</li>
+                        <li><strong>Military Addresses:</strong> Special shipping requirements</li>
+                        <li><strong>PO Boxes:</strong> Not available for all shipping methods</li>
+                        <li><strong>Embargoed Countries:</strong> We cannot ship to embargoed regions</li>
+                    </ul>
+                </div>
+                
+                <div class="legal-contact">
+                    <h3>Shipping Questions?</h3>
+                    <p>Our shipping team is here to help with any delivery questions.</p>
+                    <a href="contact.html" class="btn btn-outline">Contact Shipping Team</a>
+                </div>
+                
+                <div class="legal-links">
+                    <a href="terms.html">Terms & Conditions</a>
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="returns.html">Returns Policy</a>
+                    <a href="order-tracking.html">Order Tracking</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>SilkSpeed Race Wear</h3>
+                    <p>Premium equestrian apparel for riders worldwide.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Customer Care</h4>
+                    <ul>
+                        <li><a href="shipping.html" class="active">Shipping & Delivery</a></li>
+                        <li><a href="returns.html">Returns & Exchange</a></li>
+                        <li><a href="order-tracking.html">Order Tracking</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="wholesale.html">Wholesale</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="terms.html">Terms & Conditions</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="shipping.html">Shipping Policy</a></li>
+                        <li><a href="returns.html">Refund Policy</a></li>
+                        <li><a href="cookies.html">Cookie Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 SilkSpeed Race Wear. All rights reserved.</p>
+                <div class="payment-methods">
+                    <i class="fab fa-cc-visa"></i>
+                    <i class="fab fa-cc-mastercard"></i>
+                    <i class="fab fa-cc-amex"></i>
+                    <i class="fab fa-cc-paypal"></i>
+                    <i class="fab fa-cc-apple-pay"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script src="js/cart.js"></script>
+</body>
+</html>

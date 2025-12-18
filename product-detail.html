@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SilkSpeed Riding Pants - Summer Series | Premium Equestrian Apparel</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="logo">
+                    <img src="images/logo.png" alt="SilkSpeed Race Wear" height="40">
+                </a>
+                
+                <div class="nav-menu">
+                    <ul class="nav-list">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="wholesale.html">Wholesale</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="nav-icons">
+                    <a href="#" class="icon-link search-toggle"><i class="fas fa-search"></i></a>
+                    <a href="#" class="icon-link"><i class="far fa-user"></i></a>
+                    <a href="checkout.html" class="icon-link cart-icon">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span class="cart-count">0</span>
+                    </a>
+                    <button class="menu-toggle" id="menuToggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Product Detail Section -->
+    <section class="product-detail">
+        <div class="container">
+            <div class="product-detail-grid">
+                <!-- Product Images -->
+                <div class="product-images">
+                    <div class="main-image">
+                        <img src="https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?w=800&h=1000&fit=crop" 
+                             alt="SilkSpeed Riding Pants - Summer Series" id="mainProductImage">
+                    </div>
+                    
+                    <div class="image-thumbnails">
+                        <div class="thumbnail active" data-image="https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?w=800&h=1000&fit=crop">
+                            <img src="https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?w=200&h=250&fit=crop" alt="Front view">
+                        </div>
+                        <div class="thumbnail" data-image="https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?w=800&h=1000&fit=crop&crop=left">
+                            <img src="https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?w=200&h=250&fit=crop&crop=left" alt="Side view">
+                        </div>
+                        <div class="thumbnail" data-image="https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?w=800&h=1000&fit=crop&crop=top">
+                            <img src="https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?w=200&h=250&fit=crop&crop=top" alt="Back view">
+                        </div>
+                        <div class="thumbnail" data-image="https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?w=800&h=800&fit=crop">
+                            <img src="https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?w=200&h=200&fit=crop" alt="Fabric detail">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product Info -->
+                <div class="product-info">
+                    <div class="product-breadcrumb">
+                        <a href="index.html">Home</a> / 
+                        <a href="shop.html">Shop</a> / 
+                        <a href="shop.html?category=pants">Riding Pants</a> / 
+                        <span>Summer Series</span>
+                    </div>
+                    
+                    <h1 class="product-title">SilkSpeed Riding Pants - Summer Performance Series</h1>
+                    
+                    <div class="product-rating">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <span class="rating-text">4.5 (128 reviews)</span>
+                    </div>
+                    
+                    <div class="product-price">
+                        <span class="current-price">$119</span>
+                        <span class="original-price">$139</span>
+                        <span class="discount-badge">Save 14%</span>
+                    </div>
+                    
+                    <p class="product-short-desc">
+                        Lightweight, breathable riding pants designed for flexibility, cooling comfort, 
+                        and all-day performance. Engineered with 4-way stretch and quick-dry technology.
+                    </p>
+                    
+                    <!-- Size Selector -->
+                    <div class="product-option">
+                        <label for="size">Size:</label>
+                        <div class="size-options">
+                            <button class="size-option" data-size="XS">XS</button>
+                            <button class="size-option active" data-size="S">S</button>
+                            <button class="size-option" data-size="M">M</button>
+                            <button class="size-option" data-size="L">L</button>
+                            <button class="size-option" data-size="XL">XL</button>
+                        </div>
+                        <a href="#size-guide" class="size-guide-link">Size Guide →</a>
+                    </div>
+                    
+                    <!-- Color Selector -->
+                    <div class="product-option">
+                        <label for="color">Color:</label>
+                        <div class="color-options">
+                            <button class="color-option active" data-color="navy" style="background-color: #0A2463;" title="Navy Blue"></button>
+                            <button class="color-option" data-color="black" style="background-color: #000000;" title="Black"></button>
+                            <button class="color-option" data-color="charcoal" style="background-color: #36454F;" title="Charcoal"></button>
+                            <button class="color-option" data-color="brown" style="background-color: #8B4513;" title="Saddle Brown"></button>
+                        </div>
+                    </div>
+                    
+                    <!-- Quantity -->
+                    <div class="product-option">
+                        <label for="quantity">Quantity:</label>
+                        <div class="quantity-selector">
+                            <button class="quantity-btn minus">-</button>
+                            <input type="number" id="quantity" value="1" min="1" max="10" class="quantity-input">
+                            <button class="quantity-btn plus">+</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Add to Cart -->
+                    <div class="product-actions">
+                        <button class="btn btn-primary btn-add-to-cart">
+                            <i class="fas fa-shopping-bag"></i> Add to Cart
+                        </button>
+                        <button class="btn btn-outline btn-wishlist">
+                            <i class="far fa-heart"></i> Add to Wishlist
+                        </button>
+                    </div>
+                    
+                    <!-- Trust Indicators -->
+                    <div class="trust-indicators">
+                        <div class="trust-item">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Secure Payments</span>
+                        </div>
+                        <div class="trust-item">
+                            <i class="fas fa-shipping-fast"></i>
+                            <span>Global Shipping</span>
+                        </div>
+                        <div class="trust-item">
+                            <i class="fas fa-undo"></i>
+                            <span>30-Day Fit Guarantee</span>
+                        </div>
+                        <div class="trust-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Easy Returns</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Tabs -->
+    <section class="product-tabs">
+        <div class="container">
+            <div class="tabs-header">
+                <button class="tab-btn active" data-tab="description">Description</button>
+                <button class="tab-btn" data-tab="features">Features & Benefits</button>
+                <button class="tab-btn" data-tab="specs">Specifications</button>
+                <button class="tab-btn" data-tab="reviews">Reviews (128)</button>
+                <button class="tab-btn" data-tab="shipping">Shipping & Returns</button>
+            </div>
+            
+            <div class="tabs-content">
+                <!-- Description Tab -->
+                <div class="tab-pane active" id="description">
+                    <h2>Product Description</h2>
+                    <p>
+                        The SilkSpeed Summer Performance Riding Pants are crafted using breathable, 
+                        quick-dry microfibers that provide unmatched comfort during warm-weather training. 
+                        Designed with 4-way stretch and ergonomic panel construction, these pants adapt 
+                        to your movement, enhancing posture and stability in every ride.
+                    </p>
+                    <p>
+                        Their lightweight feel, reinforced seams, and abrasion-resistant zones make them 
+                        ideal for both casual riders and professionals seeking consistency, durability, 
+                        and premium performance.
+                    </p>
+                </div>
+                
+                <!-- Features Tab -->
+                <div class="tab-pane" id="features">
+                    <h2>Why Riders Love Our Summer Performance Pants</h2>
+                    <div class="features-grid">
+                        <div class="feature-item">
+                            <i class="fas fa-expand-alt"></i>
+                            <h3>4-Way Stretch Mobility</h3>
+                            <p>Move freely with maximum flexibility during training and long sessions.</p>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-wind"></i>
+                            <h3>Breathable Cooling Fabric</h3>
+                            <p>Advanced ventilation reduces heat build-up and keeps you dry.</p>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-tint"></i>
+                            <h3>Moisture-Wicking Technology</h3>
+                            <p>Quick-dry microfiber pulls sweat away from the skin.</p>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-ruler-combined"></i>
+                            <h3>Precision Tailored Fit</h3>
+                            <p>Sculpted for riding posture — no sagging or restriction.</p>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-shield-alt"></i>
+                            <h3>Abrasion-Resistant Paneling</h3>
+                            <p>Engineered to withstand friction, wear, and demanding rides.</p>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-hand-holding-heart"></i>
+                            <h3>Soft-Touch Interior Lining</h3>
+                            <p>Comfort that lasts all day — even during intense movement.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Specifications Tab -->
+                <div class="tab-pane" id="specs">
+                    <h2>Technical Specifications</h2>
+                    <table class="specs-table">
+                        <tr>
+                            <th>Fabric Composition</th>
+                            <td>76% nylon, 24% elastane</td>
+                        </tr>
+                        <tr>
+                            <th>Stretch Technology</th>
+                            <td>4-way dynamic stretch</td>
+                        </tr>
+                        <tr>
+                            <th>Breathability</th>
+                            <td>High airflow knit</td>
+                        </tr>
+                        <tr>
+                            <th>Care Instructions</th>
+                            <td>Machine wash cold, air dry</td>
+                        </tr>
+                        <tr>
+                            <th>Weight</th>
+                            <td>Ultra-light summer fabric (280g)</td>
+                        </tr>
+                        <tr>
+                            <th>Grip Panel</th>
+                            <td>Silicone-enhanced inner thigh</td>
+                        </tr>
+                        <tr>
+                            <th>Fit Type</th>
+                            <td>Tailored athletic fit</td>
+                        </tr>
+                        <tr>
+                            <th>Season</th>
+                            <td>Ideal for Spring/Summer</td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <!-- Reviews Tab -->
+                <div class="tab-pane" id="reviews">
+                    <h2>Customer Reviews</h2>
+                    
+                    <!-- Review Summary -->
+                    <div class="review-summary">
+                        <div class="overall-rating">
+                            <div class="rating-number">4.5</div>
+                            <div class="rating-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <p>Based on 128 reviews</p>
+                        </div>
+                        
+                        <div class="rating-bars">
+                            <div class="rating-bar">
+                                <span>5 stars</span>
+                                <div class="bar">
+                                    <div class="fill" style="width: 70%;"></div>
+                                </div>
+                                <span>70%</span>
+                            </div>
+                            <div class="rating-bar">
+                                <span>4 stars</span>
+                                <div class="bar">
+                                    <div class="fill" style="width: 20%;"></div>
+                                </div>
+                                <span>20%</span>
+                            </div>
+                            <div class="rating-bar">
+                                <span>3 stars</span>
+                                <div class="bar">
+                                    <div class="fill" style="width: 6%;"></div>
+                                </div>
+                                <span>6%</span>
+                            </div>
+                            <div class="rating-bar">
+                                <span>2 stars</span>
+                                <div class="bar">
+                                    <div class="fill" style="width: 3%;"></div>
+                                </div>
+                                <span>3%</span>
+                            </div>
+                            <div class="rating-bar">
+                                <span>1 star</span>
+                                <div class="bar">
+                                    <div class="fill" style="width: 1%;"></div>
+                                </div>
+                                <span>1%</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Individual Reviews -->
+                    <div class="reviews-list">
+                        <!-- Review 1 -->
+                        <div class="review-item">
+                            <div class="review-header">
+                                <div class="reviewer">
+                                    <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Emma" class="reviewer-avatar">
+                                    <div>
+                                        <h4>Emma C.</h4>
+                                        <div class="review-stars">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <span class="review-date">March 15, 2024</span>
+                            </div>
+                            <div class="review-content">
+                                <h3>"Best riding pants I've ever owned!"</h3>
+                                <p>
+                                    Unmatched comfort and function. The 4-way stretch makes a huge difference 
+                                    in my mobility during training sessions. I've worn them for 3-hour rides 
+                                    and they're still comfortable.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <!-- Review 2 -->
+                        <div class="review-item">
+                            <div class="review-header">
+                                <div class="reviewer">
+                                    <img src="https://randomuser.me/api/portraits/men/54.jpg" alt="James" class="reviewer-avatar">
+                                    <div>
+                                        <h4>James R.</h4>
+                                        <div class="review-stars">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star-half-alt"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <span class="review-date">February 28, 2024</span>
+                            </div>
+                            <div class="review-content">
+                                <h3>"Perfect for warm weather"</h3>
+                                <p>
+                                    The breathability is incredible. Even on hot days, these pants keep me 
+                                    cool and dry. The fit is excellent - true to size and very comfortable.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <!-- Add Review Button -->
+                        <button class="btn btn-outline btn-add-review">
+                            <i class="fas fa-pen"></i> Write a Review
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Shipping Tab -->
+                <div class="tab-pane" id="shipping">
+                    <h2>Shipping & Returns</h2>
+                    <div class="shipping-info">
+                        <h3><i class="fas fa-shipping-fast"></i> Shipping Information</h3>
+                        <ul>
+                            <li>Worldwide Shipping Available</li>
+                            <li>Orders processed within <strong>24–48 hours</strong></li>
+                            <li>Delivery timelines displayed at checkout</li>
+                            <li>Track your order using your tracking number via <strong>17track.com</strong></li>
+                        </ul>
+                        
+                        <h3><i class="fas fa-undo"></i> Return Policy</h3>
+                        <ul>
+                            <li>Easy <strong>30-day returns</strong> on unopened and unused items</li>
+                            <li>Return shipping costs are the customer's responsibility</li>
+                            <li>Refunds processed within 5–10 business days</li>
+                            <li>Contact support@silkspeed.com for returns</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Size Guide -->
+    <section class="size-guide" id="size-guide">
+        <div class="container">
+            <h2 class="section-title">Find Your Perfect Fit</h2>
+            <div class="size-guide-content">
+                <div class="size-table">
+                    <h3>Size Measurements (in cm)</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Size</th>
+                                <th>Waist</th>
+                                <th>Hip</th>
+                                <th>Length</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>XS</td>
+                                <td>60–65</td>
+                                <td>82–87</td>
+                                <td>90–92</td>
+                            </tr>
+                            <tr>
+                                <td>S</td>
+                                <td>65–70</td>
+                                <td>87–92</td>
+                                <td>91–93</td>
+                            </tr>
+                            <tr>
+                                <td>M</td>
+                                <td>70–75</td>
+                                <td>92–97</td>
+                                <td>92–94</td>
+                            </tr>
+                            <tr>
+                                <td>L</td>
+                                <td>75–80</td>
+                                <td>97–102</td>
+                                <td>93–95</td>
+                            </tr>
+                            <tr>
+                                <td>XL</td>
+                                <td>80–86</td>
+                                <td>102–108</td>
+                                <td>94–96</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="size-guide-image">
+                    <img src="https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?w=400&h=500&fit=crop" alt="Size Guide">
+                    <p>Measure around the widest part of your hips and your natural waistline.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Products -->
+    <section class="related-products">
+        <div class="container">
+            <h2 class="section-title">You May Also Like</h2>
+            <div class="products-grid">
+                <!-- Product 1 -->
+                <div class="product-card">
+                    <div class="product-badge">Bestseller</div>
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?w=400&h=500&fit=crop" alt="Winter Pants">
+                    </div>
+                    <div class="product-content">
+                        <h3>SilkSpeed Riding Pants - Winter Series</h3>
+                        <p class="product-price">$129</p>
+                        <a href="product-detail.html" class="btn btn-outline">View Details →</a>
+                    </div>
+                </div>
+                
+                <!-- Product 2 -->
+                <div class="product-card">
+                    <div class="product-badge">New</div>
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?w=400&h=500&fit=crop" alt="Long Sleeve Skivvy">
+                    </div>
+                    <div class="product-content">
+                        <h3>SilkSpeed Skivvy - Long Sleeve</h3>
+                        <p class="product-price">$49</p>
+                        <a href="product-detail.html" class="btn btn-outline">View Details →</a>
+                    </div>
+                </div>
+                
+                <!-- Product 3 -->
+                <div class="product-card">
+                    <div class="product-badge">Accessory</div>
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?w=400&h=500&fit=crop" alt="Performance Gloves">
+                    </div>
+                    <div class="product-content">
+                        <h3>SilkSpeed Performance Gloves</h3>
+                        <p class="product-price">$25</p>
+                        <a href="product-detail.html" class="btn btn-outline">View Details →</a>
+                    </div>
+                </div>
+                
+                <!-- Product 4 -->
+                <div class="product-card">
+                    <div class="product-badge">New</div>
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?w=400&h=500&fit=crop" alt="Rider Belt">
+                    </div>
+                    <div class="product-content">
+                        <h3>SilkSpeed Rider Belt</h3>
+                        <p class="product-price">$35</p>
+                        <a href="product-detail.html" class="btn btn-outline">View Details →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>SilkSpeed Race Wear</h3>
+                    <p>Premium equestrian apparel for riders worldwide.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Customer Care</h4>
+                    <ul>
+                        <li><a href="shipping.html">Shipping & Delivery</a></li>
+                        <li><a href="returns.html">Returns & Exchange</a></li>
+                        <li><a href="order-tracking.html">Order Tracking</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="wholesale.html">Wholesale</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="terms.html">Terms & Conditions</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="shipping.html">Shipping Policy</a></li>
+                        <li><a href="returns.html">Refund Policy</a></li>
+                        <li><a href="cookies.html">Cookie Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 SilkSpeed Race Wear. All rights reserved.</p>
+                <div class="payment-methods">
+                    <i class="fab fa-cc-visa"></i>
+                    <i class="fab fa-cc-mastercard"></i>
+                    <i class="fab fa-cc-amex"></i>
+                    <i class="fab fa-cc-paypal"></i>
+                    <i class="fab fa-cc-apple-pay"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script src="js/cart.js"></script>
+    
+    <!-- Product Detail Specific JavaScript -->
+    <script>
+        // Product Detail Page Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            
+            // Image Thumbnail Click
+            document.querySelectorAll('.thumbnail').forEach(thumb => {
+                thumb.addEventListener('click', function() {
+                    // Remove active class from all thumbnails
+                    document.querySelectorAll('.thumbnail').forEach(t => t.classList.remove('active'));
+                    
+                    // Add active class to clicked thumbnail
+                    this.classList.add('active');
+                    
+                    // Change main image
+                    const mainImage = document.getElementById('mainProductImage');
+                    const newImageSrc = this.getAttribute('data-image');
+                    mainImage.src = newImageSrc;
+                });
+            });
+            
+            // Size Selection
+            document.querySelectorAll('.size-option').forEach(option => {
+                option.addEventListener('click', function() {
+                    document.querySelectorAll('.size-option').forEach(o => o.classList.remove('active'));
+                    this.classList.add('active');
+                    console.log('Size selected:', this.getAttribute('data-size'));
+                });
+            });
+            
+            // Color Selection
+            document.querySelectorAll('.color-option').forEach(option => {
+                option.addEventListener('click', function() {
+                    document.querySelectorAll('.color-option').forEach(o => o.classList.remove('active'));
+                    this.classList.add('active');
+                    console.log('Color selected:', this.getAttribute('data-color'));
+                });
+            });
+            
+            // Quantity Selector
+            const quantityInput = document.getElementById('quantity');
+            document.querySelector('.quantity-btn.minus').addEventListener('click', function() {
+                let value = parseInt(quantityInput.value);
+                if (value > 1) {
+                    quantityInput.value = value - 1;
+                }
+            });
+            
+            document.querySelector('.quantity-btn.plus').addEventListener('click', function() {
+                let value = parseInt(quantityInput.value);
+                if (value < 10) {
+                    quantityInput.value = value + 1;
+                }
+            });
+            
+            // Tab Switching
+            document.querySelectorAll('.tab-btn').forEach(tab => {
+                tab.addEventListener('click', function() {
+                    const tabId = this.getAttribute('data-tab');
+                    
+                    // Update active tab button
+                    document.querySelectorAll('.tab-btn').forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Show corresponding content
+                    document.querySelectorAll('.tab-pane').forEach(pane => pane.classList.remove('active'));
+                    document.getElementById(tabId).classList.add('active');
+                });
+            });
+            
+            // Add to Cart Button
+            document.querySelector('.btn-add-to-cart').addEventListener('click', function() {
+                const product = {
+                    id: 'summer-pants-001',
+                    name: document.querySelector('.product-title').textContent,
+                    price: 119,
+                    image: document.getElementById('mainProductImage').src,
+                    size: document.querySelector('.size-option.active')?.getAttribute('data-size') || 'S',
+                    color: document.querySelector('.color-option.active')?.getAttribute('data-color') || 'navy',
+                    quantity: parseInt(quantityInput.value)
+                };
+                
+                if (window.silkspeedCart) {
+                    window.silkspeedCart.addItem(product);
+                    
+                    // Button feedback
+                    this.innerHTML = '<i class="fas fa-check"></i> Added to Cart!';
+                    this.classList.add('added');
+                    
+                    setTimeout(() => {
+                        this.innerHTML = '<i class="fas fa-shopping-bag"></i> Add to Cart';
+                        this.classList.remove('added');
+                    }, 2000);
+                }
+            });
+            
+            // Wishlist Button
+            document.querySelector('.btn-wishlist').addEventListener('click', function() {
+                this.innerHTML = '<i class="fas fa-heart"></i> Added to Wishlist';
+                this.classList.add('added');
+                
+                setTimeout(() => {
+                    this.innerHTML = '<i class="far fa-heart"></i> Add to Wishlist';
+                    this.classList.remove('added');
+                }, 2000);
+            });
+            
+            // Smooth scroll to size guide
+            document.querySelector('.size-guide-link').addEventListener('click', function(e) {
+                e.preventDefault();
+                document.getElementById('size-guide').scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html> 

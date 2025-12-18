@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery | SilkSpeed Race Wear - Real Riders, Real Performance</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.4.0/css/lightgallery.css">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <style>
+        /* Gallery specific styles */
+        .gallery-hero {
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)),
+                        url('https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?w=1920&h=600&fit=crop');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 6rem 0;
+            text-align: center;
+        }
+        
+        .gallery-hero h1 {
+            color: white;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .gallery-hero p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="logo">
+                    <img src="images/logo.png" alt="SilkSpeed Race Wear" height="40">
+                </a>
+                
+                <div class="nav-menu">
+                    <ul class="nav-list">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="gallery.html" class="active">Gallery</a></li>
+                        <li><a href="wholesale.html">Wholesale</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="nav-icons">
+                    <a href="#" class="icon-link search-toggle"><i class="fas fa-search"></i></a>
+                    <a href="#" class="icon-link"><i class="far fa-user"></i></a>
+                    <a href="checkout.html" class="icon-link cart-icon">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span class="cart-count">0</span>
+                    </a>
+                    <button class="menu-toggle" id="menuToggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Gallery Hero -->
+    <section class="gallery-hero">
+        <div class="container">
+            <h1>Riders in Motion. Style in Every Moment.</h1>
+            <p>Explore real riding moments, lifestyle shots, and behind-the-scenes visuals that reflect the essence of SilkSpeed Race Wear.</p>
+        </div>
+    </section>
+
+    <!-- Gallery Filters -->
+    <section class="gallery-filters">
+        <div class="container">
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="riding">Riding Moments</button>
+                <button class="filter-btn" data-filter="lifestyle">Lifestyle & Portraits</button>
+                <button class="filter-btn" data-filter="product">Product Close-ups</button>
+                <button class="filter-btn" data-filter="behind">Behind the Scenes</button>
+                <button class="filter-btn" data-filter="community">Community Photos</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Gallery Grid -->
+    <section class="main-gallery">
+        <div class="container">
+            <div class="gallery-grid" id="galleryGrid">
+                <!-- Riding Moments Images -->
+                <div class="gallery-item riding" data-src="https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?w=1200&h=800&fit=crop">
+                    <img src="https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?w=400&h=600&fit=crop" alt="Rider mid-jump">
+                    <div class="gallery-overlay">
+                        <div class="overlay-content">
+                            <h3>Riding Moments</h3>
+                            <p>Action shot during competition</p>
+                            <i class="fas fa-expand"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item riding" data-src="https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?w=1200&h=800&fit=crop&crop=left">
+                    <img src="https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?w-600&h=400&fit=crop&crop=left" alt="Trotting session">
+                    <div class="gallery-overlay">
+                        <div class="overlay-content">
+                            <h3>Training Ground</h3>
+                            <p>Morning trotting session</p>
+                            <i class="fas fa-expand"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Lifestyle Images -->
+                <div class="gallery-item lifestyle" data-src="https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?w=800&h=1000&fit=crop">
+                    <img src="https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?w=400&h=500&fit=crop" alt="Rider portrait">
+                    <div class="gallery-overlay">
+                        <div class="overlay-content">
+                            <h3>Portrait</h3>
+                            <p>Studio portrait session</p>
+                            <i class="fas fa-expand"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item lifestyle" data-src="https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?w=1000&h=800&fit=crop">
+                    <img src="https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?w=500&h=400&fit=crop" alt="Pre-ride preparation">
+                    <div class="gallery-overlay">
+                        <div class="overlay-content">
+                            <h3>Preparation</h3>
+                            <p>Calm before the ride</p>
+                            <i class="fas fa-expand"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product Close-ups -->
+                <div class="gallery-item product" data-src="https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?w=1000&h=1000&fit=crop">
+                    <img src="https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?w=400&h=400&fit=crop" alt="Fabric texture">
+                    <div class="gallery-overlay">
+                        <div class="overlay-content">
+                            <h3>Fabric Detail</h3>
+                            <p>Premium material close-up</p>
+                            <i class="fas fa-expand"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item product" data-src="https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?w=1000&h=1000&fit=crop&crop=top">
+                    <img src="https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?w=400&h=400&fit=crop&crop=top" alt="Stitching detail">
+                    <div class="gallery-overlay">
+                        <div class="overlay-content">
+                            <h3>Stitching</h3>
+                            <p>Precision craftsmanship</p>
+                            <i class="fas fa-expand"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Behind the Scenes -->
+                <div class="gallery-item behind" data-src="https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?w=1200&h=900&fit=crop">
+                    <img src="https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?w=400&h=300&fit=crop" alt="Tailoring process">
+                    <div class="gallery-overlay">
+                        <div class="overlay-content">
+                            <h3>Workshop</h3>
+                            <p>Expert tailoring</p>
+                            <i class="fas fa-expand"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item behind" data-src="https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?w-1200&h=900&fit=crop&crop=left">
+                    <img src="https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?w-600&h=450&fit=crop&crop=left" alt="Fabric inspection">
+                    <div class="gallery-overlay">
+                        <div class="overlay-content">
+                            <h3>Quality Check</h3>
+                            <p>Material inspection</p>
+                            <i class="fas fa-expand"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Community Photos -->
+                <div class="gallery-item community" data-src="https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?w=800&h=1000&fit=crop">
+                    <img src="https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?w=400&h=500&fit=crop" alt="Customer photo 1">
+                    <div class="gallery-overlay">
+                        <div class="overlay-content">
+                            <h3>@Rider_Jane</h3>
+                            <p>Customer showcase</p>
+                            <i class="fas fa-expand"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item community" data-src="https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?w=1000&h=800&fit=crop">
+                    <img src="https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?w=500&h=400&fit=crop" alt="Customer photo 2">
+                    <div class="gallery-overlay">
+                        <div class="overlay-content">
+                            <h3>@Equestrian_Mike</h3>
+                            <p>Training day</p>
+                            <i class="fas fa-expand"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- More images for variety -->
+                <div class="gallery-item riding" data-src="https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?w=1200&h=800&fit=crop">
+                    <img src="https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?w=600&h=400&fit=crop" alt="Galloping shot">
+                    <div class="gallery-overlay">
+                        <div class="overlay-content">
+                            <h3>Full Speed</h3>
+                            <p>Galloping in open field</p>
+                            <i class="fas fa-expand"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item lifestyle" data-src="https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?w=800&h=1000&fit=crop">
+                    <img src="https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?w=400&h=500&fit=crop" alt="Equestrian style">
+                    <div class="gallery-overlay">
+                        <div class="overlay-content">
+                            <h3>Equestrian Style</h3>
+                            <p>Casual riding look</p>
+                            <i class="fas fa-expand"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item product" data-src="https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?w=1000&h=1000&fit=crop">
+                    <img src="https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?w=400&h=400&fit=crop" alt="Grip detail">
+                    <div class="gallery-overlay">
+                        <div class="overlay-content">
+                            <h3>Grip Panel</h3>
+                            <p>Enhanced riding grip</p>
+                            <i class="fas fa-expand"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item behind" data-src="https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?w=1200&h=900&fit=crop">
+                    <img src="https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?w=600&h=450&fit=crop" alt="Production floor">
+                    <div class="gallery-overlay">
+                        <div class="overlay-content">
+                            <h3>Production</h3>
+                            <p>Manufacturing process</p>
+                            <i class="fas fa-expand"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Load More Button -->
+            <div class="load-more">
+                <button class="btn btn-primary" id="loadMoreBtn">
+                    <i class="fas fa-plus"></i> Load More Photos
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Moments -->
+    <section class="featured-moments">
+        <div class="container">
+            <h2 class="section-title">Featured Rider Moments</h2>
+            <div class="featured-slider">
+                <div class="slider-track">
+                    <div class="slide">
+                        <img src="https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?w=800&h=450&fit=crop" alt="Featured moment 1">
+                        <div class="slide-caption">
+                            <h3>Championship Win</h3>
+                            <p>National Equestrian Competition 2024</p>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <img src="https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?w=800&h=450&fit=crop&crop=left" alt="Featured moment 2">
+                        <div class="slide-caption">
+                            <h3>Training Excellence</h3>
+                            <p>Professional training session</p>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <img src="https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?w=800&h=450&fit=crop&crop=top" alt="Featured moment 3">
+                        <div class="slide-caption">
+                            <h3>Morning Ride</h3>
+                            <p>Sunrise equestrian adventure</p>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <img src="https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?w=800&h=450&fit=crop" alt="Featured moment 4">
+                        <div class="slide-caption">
+                            <h3>Team Spirit</h3>
+                            <p>Group training session</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="slider-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
+                <button class="slider-btn next-btn"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brand Story Visual -->
+    <section class="brand-story-visual">
+        <div class="container">
+            <h2>Performance, Passion, Precision — Captured Through the Lens</h2>
+            <p>Every image tells the story of our commitment to performance, rider confidence, and uncompromised quality. From training grounds to competitions, SilkSpeed stands with riders who pursue excellence.</p>
+            
+            <div class="story-collage">
+                <div class="collage-item">
+                    <img src="https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?w=600&h=400&fit=crop" alt="Performance">
+                    <div class="collage-caption">
+                        <h3>Performance</h3>
+                        <p>Engineered for athletic excellence</p>
+                    </div>
+                </div>
+                <div class="collage-item">
+                    <img src="https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?w=600&h=400&fit=crop&crop=left" alt="Passion">
+                    <div class="collage-caption">
+                        <h3>Passion</h3>
+                        <p>Driven by equestrian love</p>
+                    </div>
+                </div>
+                <div class="collage-item">
+                    <img src="https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?w=600&h=400&fit=crop&crop=top" alt="Precision">
+                    <div class="collage-caption">
+                        <h3>Precision</h3>
+                        <p>Meticulous craftsmanship</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof -->
+    <section class="social-proof">
+        <div class="container">
+            <h2 class="section-title">From the Community</h2>
+            <p class="section-subtitle">Real riders, real stories. Tag us @silkspeed_racewear to be featured.</p>
+            
+            <div class="instagram-grid">
+                <div class="instagram-item">
+                    <img src="https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?w=400&h=400&fit=crop" alt="Community photo 1">
+                    <div class="instagram-overlay">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                </div>
+                <div class="instagram-item">
+                    <img src="https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?w=400&h=400&fit=crop&crop=left" alt="Community photo 2">
+                    <div class="instagram-overlay">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                </div>
+                <div class="instagram-item">
+                    <img src="https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?w=400&h=400&fit=crop&crop=top" alt="Community photo 3">
+                    <div class="instagram-overlay">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                </div>
+                <div class="instagram-item">
+                    <img src="https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?w=400&h=400&fit=crop" alt="Community photo 4">
+                    <div class="instagram-overlay">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                </div>
+                <div class="instagram-item">
+                    <img src="https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?w=400&h=400&fit=crop&crop=left" alt="Community photo 5">
+                    <div class="instagram-overlay">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                </div>
+                <div class="instagram-item">
+                    <img src="https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?w=400&h=400&fit=crop&crop=top" alt="Community photo 6">
+                    <div class="instagram-overlay">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery CTA -->
+    <section class="gallery-cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Ride in SilkSpeed?</h2>
+                <p>Experience the difference of premium equestrian apparel designed for performance riders.</p>
+                <div class="cta-buttons">
+                    <a href="shop.html" class="btn btn-primary">Shop Our Collection →</a>
+                    <a href="about.html" class="btn btn-secondary">Discover Our Craftsmanship →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>SilkSpeed Race Wear</h3>
+                    <p>Premium equestrian apparel for riders worldwide.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Customer Care</h4>
+                    <ul>
+                        <li><a href="shipping.html">Shipping & Delivery</a></li>
+                        <li><a href="returns.html">Returns & Exchange</a></li>
+                        <li><a href="order-tracking.html">Order Tracking</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="wholesale.html">Wholesale</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="terms.html">Terms & Conditions</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="shipping.html">Shipping Policy</a></li>
+                        <li><a href="returns.html">Refund Policy</a></li>
+                        <li><a href="cookies.html">Cookie Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 SilkSpeed Race Wear. All rights reserved.</p>
+                <div class="payment-methods">
+                    <i class="fab fa-cc-visa"></i>
+                    <i class="fab fa-cc-mastercard"></i>
+                    <i class="fab fa-cc-amex"></i>
+                    <i class="fab fa-cc-paypal"></i>
+                    <i class="fab fa-cc-apple-pay"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- LightGallery Modal -->
+    <div id="lightgallery" style="display: none;">
+        <!-- Images will be added dynamically -->
+    </div>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.4.0/lightgallery.min.js"></script>
+    
+    <!-- Gallery Specific JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize variables
+            const galleryGrid = document.getElementById('galleryGrid');
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const loadMoreBtn = document.getElementById('loadMoreBtn');
+            let currentFilter = 'all';
+            let visibleItems = 12;
+            
+            // Filter functionality
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Update active button
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Get filter value
+                    currentFilter = this.getAttribute('data-filter');
+                    
+                    // Filter items
+                    filterGalleryItems();
+                });
+            });
+            
+            function filterGalleryItems() {
+                const items = galleryGrid.querySelectorAll('.gallery-item');
+                let count = 0;
+                
+                items.forEach((item, index) => {
+                    if (currentFilter === 'all' || item.classList.contains(currentFilter)) {
+                        if (count < visibleItems) {
+                            item.style.display = 'block';
+                            count++;
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+                
+                // Show/hide load more button
+                const totalFilteredItems = Array.from(items).filter(item => 
+                    currentFilter === 'all' || item.classList.contains(currentFilter)
+                ).length;
+                
+                if (visibleItems >= totalFilteredItems) {
+                    loadMoreBtn.style.display = 'none';
+                } else {
+                    loadMoreBtn.style.display = 'block';
+                }
+            }
+            
+            // Load more functionality
+            loadMoreBtn.addEventListener('click', function() {
+                visibleItems += 8;
+                filterGalleryItems();
+                
+                // Smooth scroll to newly loaded items
+                const newItems = galleryGrid.querySelectorAll('.gallery-item[style="display: block;"]');
+                if (newItems.length > 0) {
+                    newItems[newItems.length - 1].scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'nearest'
+                    });
+                }
+            });
+            
+            // Initialize gallery filter
+            filterGalleryItems();
+            
+            // Featured slider
+            const sliderTrack = document.querySelector('.slider-track');
+            const slides = document.querySelectorAll('.slide');
+            const prevBtn = document.querySelector('.prev-btn');
+            const nextBtn = document.querySelector('.next-btn');
+            let currentSlide = 0;
+            const slideWidth = slides[0].offsetWidth;
+            const totalSlides = slides.length;
+            
+            function updateSlider() {
+                sliderTrack.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
+            }
+            
+            nextBtn.addEventListener('click', function() {
+                if (currentSlide < totalSlides - 1) {
+                    currentSlide++;
+                } else {
+                    currentSlide = 0;
+                }
+                updateSlider();
+            });
+            
+            prevBtn.addEventListener('click', function() {
+                if (currentSlide > 0) {
+                    currentSlide--;
+                } else {
+                    currentSlide = totalSlides - 1;
+                }
+                updateSlider();
+            });
+            
+            // Auto slide every 5 seconds
+            setInterval(() => {
+                if (currentSlide < totalSlides - 1) {
+                    currentSlide++;
+                } else {
+                    currentSlide = 0;
+                }
+                updateSlider();
+            }, 5000);
+            
+            // LightGallery initialization
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            const lightgalleryContainer = document.getElementById('lightgallery');
+            
+            // Add images to lightgallery
+            galleryItems.forEach(item => {
+                const img = item.querySelector('img');
+                const src = item.getAttribute('data-src');
+                const alt = img.getAttribute('alt');
+                const overlayContent = item.querySelector('.overlay-content');
+                const title = overlayContent ? overlayContent.querySelector('h3').textContent : '';
+                const desc = overlayContent ? overlayContent.querySelector('p').textContent : '';
+                
+                // Create link for lightgallery
+                const link = document.createElement('a');
+                link.href = src;
+                link.setAttribute('data-lg-size', '1400-933');
+                link.setAttribute('data-src', src);
+                link.setAttribute('data-sub-html', `<h4>${title}</h4><p>${desc}</p>`);
+                
+                // Create thumbnail
+                const thumbnail = document.createElement('img');
+                thumbnail.src = img.src;
+                thumbnail.alt = alt;
+                thumbnail.style.display = 'none';
+                
+                link.appendChild(thumbnail);
+                lightgalleryContainer.appendChild(link);
+                
+                // Add click event to gallery item
+                item.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // Get index of clicked item
+                    const itemsArray = Array.from(galleryItems);
+                    const index = itemsArray.indexOf(this);
+                    
+                    // Initialize lightgallery
+                    lightGallery(lightgalleryContainer, {
+                        dynamic: true,
+                        dynamicEl: Array.from(lightgalleryContainer.querySelectorAll('a')).map(a => ({
+                            src: a.getAttribute('data-src'),
+                            thumb: a.querySelector('img').src,
+                            subHtml: a.getAttribute('data-sub-html')
+                        })),
+                        index: index
+                    });
+                });
+            });
+            
+            // Instagram grid hover effect
+            const instagramItems = document.querySelectorAll('.instagram-item');
+            instagramItems.forEach(item => {
+                item.addEventListener('mouseenter', function() {
+                    const overlay = this.querySelector('.instagram-overlay');
+                    overlay.style.opacity = '1';
+                });
+                
+                item.addEventListener('mouseleave', function() {
+                    const overlay = this.querySelector('.instagram-overlay');
+                    overlay.style.opacity = '0.8';
+                });
+            });
+            
+            // Initialize masonry layout with CSS grid
+            function initMasonry() {
+                // CSS grid automatically handles masonry
+                galleryGrid.style.display = 'grid';
+            }
+            
+            initMasonry();
+            
+            // Window resize handler
+            window.addEventListener('resize', function() {
+                updateSlider();
+                initMasonry();
+            });
+        });
+    </script>
+</body>
+</html>

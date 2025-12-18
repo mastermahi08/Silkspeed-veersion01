@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Track Your Order | SilkSpeed Race Wear</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Core Styles -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- ================= HEADER ================= -->
+<header class="header">
+    <div class="container">
+        <nav class="navbar">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="SilkSpeed Race Wear">
+            </a>
+            <ul class="nav-list">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="order-tracking.html" class="active">Track Order</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<!-- ================= MAIN ================= -->
+<main class="order-tracking-page">
+
+    <!-- HERO -->
+    <section class="tracking-hero">
+        <div class="container">
+            <h1>Track Your Order</h1>
+            <p>Stay updated on your shipment’s journey — from our facility to your doorstep.</p>
+        </div>
+    </section>
+
+    <!-- INPUT -->
+    <section class="tracking-input-section">
+        <div class="container">
+            <div class="tracking-card">
+
+                <h2>Enter Your Tracking Number</h2>
+
+                <form id="tracking-form">
+                    <input
+                        type="text"
+                        id="tracking-number"
+                        placeholder="Enter your tracking number (e.g. SS123456789)"
+                        required
+                    >
+                    <button type="submit" class="btn btn-primary">
+                        Track My Order
+                    </button>
+                </form>
+
+                <p class="helper-text">
+                    Your tracking number was sent to your email once your order was shipped.
+                </p>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- RESULTS -->
+    <section class="tracking-result-section" id="tracking-result" hidden>
+        <div class="container">
+            <div class="tracking-result-card">
+
+                <h3>Shipment Status</h3>
+
+                <div class="tracking-overview">
+                    <p><strong>Status:</strong> <span class="status in-transit">In Transit</span></p>
+                    <p><strong>Carrier:</strong> International Logistics Partner</p>
+                    <p><strong>Tracking Number:</strong> <span id="display-tracking"></span></p>
+                    <p><strong>Last Updated:</strong> <span id="last-updated"></span></p>
+                    <p><strong>Estimated Delivery:</strong> Approx. 5–10 business days</p>
+                </div>
+
+                <!-- TIMELINE -->
+                <div class="tracking-timeline">
+                    <div class="step completed">Order Confirmed</div>
+                    <div class="step completed">Dispatched</div>
+                    <div class="step active">In Transit</div>
+                    <div class="step">Out for Delivery</div>
+                    <div class="step">Delivered</div>
+                </div>
+
+                <p class="status-note">
+                    Your package is currently moving through international transit hubs.
+                </p>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- TRANSPARENCY -->
+    <section class="tracking-info">
+        <div class="container">
+            <h3>Global Shipment Tracking</h3>
+            <p>
+                To provide accurate worldwide shipment updates, SilkSpeed Race Wear works with trusted
+                global logistics systems, including platforms like <strong>17TRACK</strong>, which aggregate
+                data from hundreds of international carriers.
+            </p>
+            <p>
+                You remain a SilkSpeed customer at every stage — tracking is displayed for your convenience
+                and peace of mind.
+            </p>
+        </div>
+    </section>
+
+    <!-- CUSTOMS -->
+    <section class="tracking-info light">
+        <div class="container">
+            <h3>Delivery, Customs & Possible Delays</h3>
+            <ul>
+                <li>International shipments may undergo customs inspection.</li>
+                <li>Customs duties or taxes (if applicable) are the recipient’s responsibility.</li>
+                <li>Delays may occur due to customs, weather, or carrier handovers.</li>
+            </ul>
+            <p class="reassurance">
+                We continuously monitor shipments and update tracking as soon as information is available.
+            </p>
+        </div>
+    </section>
+
+    <!-- SUPPORT -->
+    <section class="tracking-support">
+        <div class="container">
+            <h3>Need Help With Your Order?</h3>
+            <p>
+                If your tracking hasn’t updated for more than 5–7 business days,
+                our support team is ready to help.
+            </p>
+            <a href="contact.html" class="btn btn-secondary">
+                Contact Customer Support →
+            </a>
+        </div>
+    </section>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+    <div class="container text-center">
+        <p>&copy; 2024 SilkSpeed Race Wear. All rights reserved.</p>
+    </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/order-tracking.js"></script>
+
+</body>
+</html>

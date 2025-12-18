@@ -1,0 +1,715 @@
+JAVASCRIPT FILE 1ST (CART.JS)
+
+// Shopping Cart Functionality
+class ShoppingCart {
+    constructor() {
+        this.cart = JSON.parse(localStorage.getItem('silkspeed-cart')) || [];
+        this.init();
+    }
+    
+    init() {
+        this.updateCartCount();
+        this.setupEventListeners();
+    }
+    
+    updateCartCount() {
+        const countElements = document.querySelectorAll('.cart-count');
+        const totalItems = this.cart.reduce((sum, item) => sum + item.quantity, 0);
+        
+        countElements.forEach(element => {
+            element.textContent = totalItems;
+            element.style.display = totalItems > 0 ? 'flex' : 'none';
+        });
+    }
+    
+    addItem(product) {
+        const existingItem = this.cart.find(item => 
+            item.id === product.id && 
+            item.size === product.size && 
+            item.color === product.color
+        );
+        
+        if (existingItem) {
+            existingItem.quantity += product.quantity;
+        } else {
+            this.cart.push({
+                ...product,
+                addedAt: new Date().toISOString()
+            });
+        }
+        
+        this.saveCart();
+        this.updateCartCount();
+        this.showNotification('Item added to cart!');
+    }
+    
+    removeItem(index) {
+        this.cart.splice(index, 1);
+        this.saveCart();
+        this.updateCartCount();
+    }
+    
+    updateQuantity(index, quantity) {
+        if (quantity < 1) {
+            this.removeItem(index);
+            return;
+        }
+        
+        this.cart[index].quantity = quantity;
+        this.saveCart();
+        this.updateCartCount();
+    }
+    
+    getTotal() {
+        return this.cart.reduce((total, item) => {
+            return total + (item.price * item.quantity);
+        }, 0);
+    }
+    
+    getItemCount() {
+        return this.cart.reduce((sum, item) => sum + item.quantity, 0);
+    }
+    
+    clearCart() {
+        this.cart = [];
+        this.saveCart();
+        this.updateCartCount();
+    }
+    
+    saveCart() {
+        localStorage.setItem('silkspeed-cart', JSON.stringify(this.cart));
+    }
+    
+    showNotification(message) {
+        // Create notification element
+        const notification = document.createElement('div');
+        notification.className = 'cart-notification';
+        notification.innerHTML = `
+            <div class="notification-content">
+                <i class="fas fa-check-circle"></i>
+                <span>${message}</span>
+            </div>
+        `;
+        
+        // Add styles
+        const style = document.createElement('style');
+        style.textContent = `
+            .cart-notification {
+                position: fixed;
+                top: 100px;
+                right: 20px;
+                background-color: #4CAF50;
+                color: white;
+                padding: 15px 20px;
+                border-radius: 8px;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+                z-index: 1000;
+                transform: translateX(150%);
+                transition: transform 0.3s ease;
+            }
+            
+            .cart-notification.show {
+                transform: translateX(0);
+            }
+            
+            .notification-content {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
+            
+            .notification-content i {
+                font-size: 1.2rem;
+            }
+        `;
+        
+        document.head.appendChild(style);
+        document.body.appendChild(notification);
+        
+        // Show notification
+        setTimeout(() => notification.classList.add('show'), 10);
+        
+        // Hide after 3 seconds
+        setTimeout(() => {
+            notification.classList.remove('show');
+            setTimeout(() => {
+                notification.remove();
+                style.remove();
+            }, 300);
+        }, 3000);
+    }
+    
+    setupEventListeners() {
+        // Handle add to cart buttons
+        document.addEventListener('click', (e) => {
+            const addToCartBtn = e.target.closest('.add-to-cart-btn');
+            if (addToCartBtn) {
+                e.preventDefault();
+                
+                // Get product data from data attributes or form
+                const productCard = addToCartBtn.closest('.product-card, .product-detail');
+                if (productCard) {
+                    const product = {
+                        id: addToCartBtn.dataset.productId || productCard.dataset.productId,
+                        name: addToCartBtn.dataset.productName || productCard.querySelector('.product-title')?.textContent,
+                        price: parseFloat(addToCartBtn.dataset.productPrice || 
+                                         productCard.querySelector('.product-price')?.textContent.replace('$', '') || 0),
+                        image: addToCartBtn.dataset.productImage || 
+                               productCard.querySelector('.product-image img')?.src,
+                        quantity: 1,
+                        size: this.getSelectedSize(),
+                        color: this.getSelectedColor()
+                    };
+                    
+                    this.addItem(product);
+                }
+            }
+        });
+        
+        // Handle cart page interactions
+        if (window.location.pathname.includes('checkout.html') || 
+            window.location.pathname.includes('cart.html')) {
+            this.renderCartPage();
+        }
+    }
+    
+    getSelectedSize() {
+        const sizeSelector = document.querySelector('.size-selector input:checked, .size-selector select');
+        if (sizeSelector) {
+            return sizeSelector.value || sizeSelector.textContent;
+        }
+        return null;
+    }
+    
+    getSelectedColor() {
+        const colorSelector = document.querySelector('.color-selector input:checked, .color-selector .selected');
+        if (colorSelector) {
+            return colorSelector.value || colorSelector.dataset.color;
+        }
+        return null;
+    }
+    
+    renderCartPage() {
+        const cartContainer = document.getElementById('cart-items');
+        const cartTotal = document.getElementById('cart-total');
+        const emptyCart = document.getElementById('empty-cart');
+        const cartNotEmpty = document.getElementById('cart-not-empty');
+        
+        if (!cartContainer) return;
+        
+        if (this.cart.length === 0) {
+            if (emptyCart) emptyCart.style.display = 'block';
+            if (cartNotEmpty) cartNotEmpty.style.display = 'none';
+            return;
+        }
+        
+        if (emptyCart) emptyCart.style.display = 'none';
+        if (cartNotEmpty) cartNotEmpty.style.display = 'block';
+        
+        // Render cart items
+        cartContainer.innerHTML = this.cart.map((item, index) => `
+            <div class="cart-item" data-index="${index}">
+                <div class="cart-item-image">
+                    <img src="${item.image}" alt="${item.name}" loading="lazy">
+                </div>
+                <div class="cart-item-details">
+                    <h4>${item.name}</h4>
+                    ${item.size ? `<p>Size: ${item.size}</p>` : ''}
+                    ${item.color ? `<p>Color: ${item.color}</p>` : ''}
+                    <p class="price">$${item.price.toFixed(2)}</p>
+                </div>
+                <div class="cart-item-quantity">
+                    <button class="quantity-btn minus" data-action="decrease">-</button>
+                    <input type="number" value="${item.quantity}" min="1" max="99" class="quantity-input">
+                    <button class="quantity-btn plus" data-action="increase">+</button>
+                </div>
+                <div class="cart-item-subtotal">
+                    $${(item.price * item.quantity).toFixed(2)}
+                </div>
+                <button class="cart-item-remove" data-action="remove">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+        `).join('');
+        
+        // Update total
+        if (cartTotal) {
+            cartTotal.textContent = `$${this.getTotal().toFixed(2)}`;
+        }
+        
+        // Add event listeners to cart controls
+        cartContainer.addEventListener('click', (e) => {
+            const cartItem = e.target.closest('.cart-item');
+            if (!cartItem) return;
+            
+            const index = parseInt(cartItem.dataset.index);
+            const action = e.target.closest('[data-action]')?.dataset.action;
+            
+            switch(action) {
+                case 'increase':
+                    this.updateQuantity(index, this.cart[index].quantity + 1);
+                    this.renderCartPage();
+                    break;
+                case 'decrease':
+                    this.updateQuantity(index, this.cart[index].quantity - 1);
+                    this.renderCartPage();
+                    break;
+                case 'remove':
+                    this.removeItem(index);
+                    this.renderCartPage();
+                    break;
+            }
+        });
+        
+        // Handle quantity input changes
+        cartContainer.addEventListener('change', (e) => {
+            if (e.target.classList.contains('quantity-input')) {
+                const cartItem = e.target.closest('.cart-item');
+                const index = parseInt(cartItem.dataset.index);
+                const quantity = parseInt(e.target.value);
+                
+                if (!isNaN(quantity) && quantity > 0) {
+                    this.updateQuantity(index, quantity);
+                    this.renderCartPage();
+                }
+            }
+        });
+    }
+}
+
+// Initialize cart when DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+    window.silkspeedCart = new ShoppingCart();
+});
+
+
+--------------------------------
+NEXT 2ND FILE (MAIN.JS)
+
+// Main JavaScript for SilkSpeed Website
+
+document.addEventListener('DOMContentLoaded', function() {
+    
+    // Mobile Menu Toggle
+    const menuToggle = document.getElementById('menuToggle');
+    const navMenu = document.querySelector('.nav-menu');
+    
+    if (menuToggle) {
+        menuToggle.addEventListener('click', function() {
+            navMenu.classList.toggle('active');
+            this.classList.toggle('active');
+        });
+    }
+    
+    // Search Toggle
+    const searchToggle = document.querySelector('.search-toggle');
+    const searchBar = document.getElementById('searchBar');
+    const searchClose = document.querySelector('.search-close');
+    
+    if (searchToggle && searchBar) {
+        searchToggle.addEventListener('click', function(e) {
+            e.preventDefault();
+            searchBar.classList.toggle('active');
+        });
+        
+        if (searchClose) {
+            searchClose.addEventListener('click', function() {
+                searchBar.classList.remove('active');
+            });
+        }
+    }
+    
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', function(e) {
+        if (!e.target.closest('.nav-menu') && !e.target.closest('.menu-toggle') && navMenu.classList.contains('active')) {
+            navMenu.classList.remove('active');
+            if (menuToggle) menuToggle.classList.remove('active');
+        }
+    });
+    
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            
+            if (href === '#') return;
+            
+            if (href.startsWith('#')) {
+                e.preventDefault();
+                const target = document.querySelector(href);
+                
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (navMenu.classList.contains('active')) {
+                        navMenu.classList.remove('active');
+                        if (menuToggle) menuToggle.classList.remove('active');
+                    }
+                }
+            }
+        });
+    });
+    
+    // Image lazy loading
+    const lazyImages = document.querySelectorAll('img[data-src]');
+    
+    if ('IntersectionObserver' in window) {
+        const imageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.src = img.dataset.src;
+                    img.classList.add('loaded');
+                    observer.unobserve(img);
+                }
+            });
+        });
+        
+        lazyImages.forEach(img => imageObserver.observe(img));
+    } else {
+        // Fallback for older browsers
+        lazyImages.forEach(img => {
+            img.src = img.dataset.src;
+        });
+    }
+    
+    // Newsletter Form Submission
+    const newsletterForm = document.querySelector('.newsletter-form');
+    
+    if (newsletterForm) {
+        newsletterForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const emailInput = this.querySelector('input[type="email"]');
+            const email = emailInput.value.trim();
+            
+            if (this.validateEmail(email)) {
+                // Simulate form submission
+                emailInput.value = '';
+                this.innerHTML = '<p class="success-message">Thank you for subscribing! Check your email for the 10% discount code.</p>';
+                
+                // In production, you would send this to your backend
+                console.log('Newsletter subscription:', email);
+            } else {
+                this.classList.add('error');
+                setTimeout(() => this.classList.remove('error'), 3000);
+            }
+        });
+        
+        // Email validation helper
+        newsletterForm.validateEmail = function(email) {
+            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(email);
+        };
+    }
+    
+    // Product Card Hover Effects
+    const productCards = document.querySelectorAll('.product-card');
+    
+    productCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-8px)';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0)';
+        });
+    });
+    
+    // Testimonial Slider (Simple Auto-rotate)
+    const testimonialSlider = document.querySelector('.testimonial-slider');
+    
+    if (testimonialSlider && window.innerWidth > 768) {
+        let currentSlide = 0;
+        const slides = testimonialSlider.children;
+        const totalSlides = slides.length;
+        
+        function rotateTestimonials() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            
+            // Simple fade effect
+            slides.forEach((slide, index) => {
+                slide.style.opacity = index === currentSlide ? '1' : '0.5';
+                slide.style.transform = index === currentSlide ? 'scale(1.02)' : 'scale(1)';
+            });
+        }
+        
+        // Initialize
+        slides.forEach((slide, index) => {
+            slide.style.transition = 'all 0.5s ease';
+            slide.style.opacity = index === 0 ? '1' : '0.5';
+        });
+        
+        // Auto rotate every 5 seconds
+        setInterval(rotateTestimonials, 5000);
+    }
+    
+    // Add to Cart Button Animation
+    document.addEventListener('click', function(e) {
+        if (e.target.classList.contains('add-to-cart') || e.target.closest('.add-to-cart')) {
+            const button = e.target.classList.contains('add-to-cart') ? e.target : e.target.closest('.add-to-cart');
+            
+            // Add animation class
+            button.classList.add('adding');
+            
+            // Update cart count
+            const cartCount = document.querySelector('.cart-count');
+            if (cartCount) {
+                let count = parseInt(cartCount.textContent) || 0;
+                cartCount.textContent = count + 1;
+                cartCount.classList.add('pulse');
+                
+                // Remove pulse animation class
+                setTimeout(() => {
+                    cartCount.classList.remove('pulse');
+                }, 300);
+            }
+            
+            // Remove animation class
+            setTimeout(() => {
+                button.classList.remove('adding');
+            }, 600);
+        }
+    });
+    
+    // Sticky Header
+    const header = document.querySelector('.header');
+    let lastScroll = 0;
+    
+    window.addEventListener('scroll', function() {
+        const currentScroll = window.pageYOffset;
+        
+        if (currentScroll <= 0) {
+            header.classList.remove('scroll-up');
+            return;
+        }
+        
+        if (currentScroll > lastScroll && !header.classList.contains('scroll-down')) {
+            // Scroll Down
+            header.classList.remove('scroll-up');
+            header.classList.add('scroll-down');
+        } else if (currentScroll < lastScroll && header.classList.contains('scroll-down')) {
+            // Scroll Up
+            header.classList.remove('scroll-down');
+            header.classList.add('scroll-up');
+        }
+        
+        lastScroll = currentScroll;
+    });
+    
+    // Initialize tooltips
+    const tooltips = document.querySelectorAll('[data-tooltip]');
+    
+    tooltips.forEach(element => {
+        element.addEventListener('mouseenter', function() {
+            const tooltipText = this.getAttribute('data-tooltip');
+            const tooltip = document.createElement('div');
+            tooltip.className = 'tooltip';
+            tooltip.textContent = tooltipText;
+            document.body.appendChild(tooltip);
+            
+            const rect = this.getBoundingClientRect();
+            tooltip.style.top = (rect.top - tooltip.offsetHeight - 10) + 'px';
+            tooltip.style.left = (rect.left + (rect.width - tooltip.offsetWidth) / 2) + 'px';
+            
+            this.tooltip = tooltip;
+        });
+        
+        element.addEventListener('mouseleave', function() {
+            if (this.tooltip) {
+                this.tooltip.remove();
+                this.tooltip = null;
+            }
+        });
+    });
+    
+    // Form Validation
+    const forms = document.querySelectorAll('form:not(.newsletter-form)');
+    
+    forms.forEach(form => {
+        form.addEventListener('submit', function(e) {
+            let isValid = true;
+            const inputs = this.querySelectorAll('input[required], textarea[required], select[required]');
+            
+            inputs.forEach(input => {
+                if (!input.value.trim()) {
+                    isValid = false;
+                    input.classList.add('error');
+                    
+                    // Remove error class after 3 seconds
+                    setTimeout(() => {
+                        input.classList.remove('error');
+                    }, 3000);
+                } else {
+                    input.classList.remove('error');
+                }
+                
+                // Email validation
+                if (input.type === 'email' && input.value.trim()) {
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!emailRegex.test(input.value.trim())) {
+                        isValid = false;
+                        input.classList.add('error');
+                    }
+                }
+            });
+            
+            if (!isValid) {
+                e.preventDefault();
+                this.classList.add('was-validated');
+            }
+        });
+    });
+    
+    // Back to Top Button
+    const backToTop = document.createElement('button');
+    backToTop.className = 'back-to-top';
+    backToTop.innerHTML = '<i class="fas fa-chevron-up"></i>';
+    document.body.appendChild(backToTop);
+    
+    backToTop.addEventListener('click', function() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+    
+    window.addEventListener('scroll', function() {
+        if (window.pageYOffset > 300) {
+            backToTop.classList.add('visible');
+        } else {
+            backToTop.classList.remove('visible');
+        }
+    });
+    
+    // Initialize
+    console.log('SilkSpeed website initialized successfully');
+});
+
+// Add CSS for back-to-top button
+const backToTopCSS = `
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+    z-index: 100;
+    box-shadow: var(--shadow);
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.back-to-top:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-3px);
+}
+
+.tooltip {
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    z-index: 1000;
+    pointer-events: none;
+    white-space: nowrap;
+}
+
+.cart-count.pulse {
+    animation: pulse 0.3s ease;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.3); }
+    100% { transform: scale(1); }
+}
+
+.add-to-cart.adding {
+    animation: addToCart 0.6s ease;
+}
+
+@keyframes addToCart {
+    0% { transform: scale(1); }
+    50% { transform: scale(0.9); }
+    100% { transform: scale(1); }
+}
+
+form .error {
+    border-color: #ff4444 !important;
+}
+
+.success-message {
+    color: #4CAF50;
+    text-align: center;
+    padding: 10px;
+    background-color: rgba(76, 175, 80, 0.1);
+    border-radius: var(--radius);
+}
+
+.header.scroll-down {
+    transform: translateY(-100%);
+}
+
+.header.scroll-up {
+    transform: translateY(0);
+    box-shadow: var(--shadow);
+}
+`
+// Product Detail Page Enhancements (if on product page)
+if (document.querySelector('.product-detail')) {
+    // Zoom image on hover
+    const mainImage = document.getElementById('mainProductImage');
+    if (mainImage) {
+        mainImage.addEventListener('mouseenter', function() {
+            this.style.transform = 'scale(1.05)';
+            this.style.transition = 'transform 0.3s ease';
+        });
+        
+        mainImage.addEventListener('mouseleave', function() {
+            this.style.transform = 'scale(1)';
+        });
+    }
+    
+    // Size guide modal (simplified)
+    const sizeGuideLinks = document.querySelectorAll('.size-guide-link');
+    sizeGuideLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            if (this.getAttribute('href') === '#size-guide') {
+                e.preventDefault();
+                const sizeGuide = document.getElementById('size-guide');
+                if (sizeGuide) {
+                    sizeGuide.scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+        });
+    });
+};
+
+
+// Inject CSS
+const style = document.createElement('style');
+style.textContent = backToTopCSS;
+document.head.appendChild(style);
